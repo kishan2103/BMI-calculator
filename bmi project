@@ -1,0 +1,60 @@
+ /**
+ *
+ * @author kishan kumar
+ */
+package bmi;
+import java.util.Scanner;
+ 
+public class BMI{
+ 
+   // creating a method to calculate BMI..
+   public static String bmiCalculator(double weight, 
+                                    double height) {
+ 
+      // calculating bmi
+      double BMI = weight / ( height * height) ;
+ 
+      // checking range according to result of BMI.
+      if(BMI < 18.5)
+      {
+      System.out.println("BMI is ="+BMI);
+         return "Thinness";
+      }
+      else if(BMI < 25)
+      {
+      System.out.println("BMI is ="+BMI);
+      return "Normal";
+      }
+      else if(BMI < 30)
+      {
+      System.out.println("BMI is ="+BMI);
+      return "Overweight";
+      }
+      else
+      {
+      System.out.println("BMI is ="+BMI);
+       return "Obese";
+      }
+   }
+ 
+   public static void main(String[] args) {
+ 
+      // declaring  variables....
+      double weight = 0.0f;
+      double Meters = 0.0f;
+      String result = null;
+ 
+      // taking input form user
+      Scanner scan = new Scanner(System.in);
+      System.out.print("Enter weight in Kg: ");
+      weight = scan.nextDouble();
+      System.out.print("Enter height in meters: ");
+      Meters = scan.nextDouble();
+ 
+      // calling  BMI  function for calculating BMI index
+      result = bmiCalculator(weight,Meters);
+      // displaying the result...
+      System.out.println(result);
+      scan.close();
+   }
+}
